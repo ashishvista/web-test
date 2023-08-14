@@ -15,9 +15,6 @@ Given(/^I am on the (\w+) page$/, async (page) => {
     await pages[page].open()
 });
 
-// When(/^I login with (\w+) and (.+)$/, async (username, password) => {
-//     await LoginPage.login(username, password)
-// });
 
 When(/^I login with$/, async () => {
     let username = 'kloudship.qa.automation@mailinator.com'
@@ -29,8 +26,6 @@ When(/^I login with$/, async () => {
 Then(/^I should see a page title saying (.*)$/, async (message) => {
     await expect(browser).toHaveTitle(message)
 });
-
-
 
 
 When(/^I click package icon on home page$/, async () => {
