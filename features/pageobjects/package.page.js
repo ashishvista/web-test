@@ -4,25 +4,26 @@ import Page from './page.js';
 class PackagePage extends Page {
 
     get addPackageBtn() {
-        return $('body > app-root > app-sidenav > mat-sidenav-container > mat-sidenav-content > app-header > mat-toolbar > button.mat-focus-indicator.button-disabled.mat-icon-button.mat-button-base.ng-star-inserted');
+        return $('//mat-icon[normalize-space()="check"]');
 
     }
 
     get inputName() {
-        return $('#mat-input-1')
+        return $('//input[@formcontrolname="name"]')
     }
 
     get inputLength() {
-        return $('#mat-input-2')
+        return $('//input[@formcontrolname="length"]')
     }
     get inputWidth() {
-        return $('#mat-input-3')
+        return $('//input[@formcontrolname="width"]')
     }
     get inputHeight() {
-        return $('#mat-input-4')
+        return $('//input[@formcontrolname="height"]')
     }
     get packageSubmitBtn() {
-        return $('body > app-root > app-sidenav > mat-sidenav-container > mat-sidenav-content > perfect-scrollbar > div > div.ps-content > div > app-dashboard > div > div:nth-child(2) > app-package-type-manage > mat-toolbar > button')
+    return $('//mat-icon[normalize-space()="check"]')
+
     }
 
 

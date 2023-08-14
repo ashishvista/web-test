@@ -4,12 +4,12 @@ import Page from './page.js';
 class TopMenu extends Page {
  
     get packageBtn () {
-        return $('body > app-root > app-sidenav > mat-sidenav-container > mat-sidenav-content > perfect-scrollbar > div > div.ps-content > div > app-home > div > div.row.count-card-wrapper > mat-card:nth-child(8)');
-
+        // return $('body > app-root > app-sidenav > mat-sidenav-container > mat-sidenav-content > perfect-scrollbar > div > div.ps-content > div > app-home > div > div.row.count-card-wrapper > mat-card:nth-child(8)');
+        return $('//mat-toolbar//mat-icon[normalize-space()="add"]');
     }
 
     get threedotsBtn () {
-        return $('body > app-root > app-sidenav > mat-sidenav-container > mat-sidenav-content > app-header > mat-toolbar > button.mat-focus-indicator.mat-menu-trigger.mat-tooltip-trigger.mat-icon-button.mat-button-base');
+        return $('//mat-toolbar//mat-icon[normalize-space()="more_vert"]');
 
     }
     get logoutBtn () {

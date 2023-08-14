@@ -20,10 +20,7 @@ class LoginPage extends Page {
         return $('button[type="submit"]');
     }
 
-    get packageBtn() {
-        return $('body > app-root > app-sidenav > mat-sidenav-container > mat-sidenav-content > perfect-scrollbar > div > div.ps-content > div > app-home > div > div.row.count-card-wrapper > mat-card:nth-child(8)');
 
-    }
 
     async login(username, password) {
         await this.inputUsername.setValue(username);

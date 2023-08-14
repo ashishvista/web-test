@@ -11,14 +11,14 @@ Feature: The Internet Guinea Pig Website
       | kloudship.qa.automation@mailinator.com | Password1 | KloudShip - eCommerce & Shipping Solutions |
 
 
-  Scenario: As a user, I clicked package
+  Scenario: As a user, on home page I clicked package
     
-    When I click package icon
+    When I click package icon on home page
 
   Scenario: As a user, i want to add package
     
-    When I click add package icon
-    Then i add package details
+    When I click add package icon on top menu
+    Then add new package detail
   
   Scenario: As a user, i want to logout
     
