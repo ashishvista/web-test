@@ -29,7 +29,6 @@ Then(/^I should see a page title saying (.*)$/, async (message) => {
 
 
 When(/^I click package icon on home page$/, async () => {
-    // await (await HomePage.packageBtn).click()
     await HomePage.packageBtn.click()
 
 });
