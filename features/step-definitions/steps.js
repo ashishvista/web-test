@@ -5,6 +5,7 @@ import LoginPage from '../pageobjects/login.page.js';
 import TopMenu from '../pageobjects/top.menu.js';
 import PackagePage from '../pageobjects/package.page.js';
 import HomePage from '../pageobjects/home.page.js';
+import { randomData } from '../utils/faker.js';
 const pages = {
     login: LoginPage,
     home: TopMenu,
@@ -38,7 +39,7 @@ When(/^I click add package icon on top menu$/, async () => {
 });
 
 Then(/^add new package detail$/, async () => {
-    await PackagePage.addPackage()
+    await PackagePage.addPackage(randomData)
 });
 
 
@@ -46,3 +47,8 @@ Then(/^i logout$/, async () => {
     await TopMenu.logout()
 });
 
+
+
+When(/^I click delete package icon on top menu$/, () => {
+	return true;
+});

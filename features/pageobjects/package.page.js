@@ -26,13 +26,12 @@ class PackagePage extends Page {
 
     }
 
-
-    async addPackage() {
-        await browser.pause(3000)
-        await this.inputName.setValue('hello');
-        await this.inputLength.setValue(this.between(1, 21));
-        await this.inputWidth.setValue(this.between(1, 21));
-        await this.inputHeight.setValue(this.between(1, 21));
+    async addPackage(randomData) {
+        await this.inputName.waitForExist({ timeout: 5000 });
+        await this.inputName.setValue(randomData.name);
+        await this.inputLength.setValue(randomData.length);
+        await this.inputWidth.setValue(randomData.width);
+        await this.inputHeight.setValue(randomData.height);
         await this.packageSubmitBtn.click();
     }
 
