@@ -30,10 +30,10 @@ class PackagePage extends Page {
     }
     get packageAdded(){
         // return $("//div[normalize-space()='test']");
-        return this.packageAdded
+        return this._packageAdded
     }
     set packageAdded(packagename){
-        return $(`//div[normalize-space()='${packagename}']`);
+        this._packageAdded=$(`//div[normalize-space()='${packagename}']`);
     }
 
     async addPackage(randomData) {
@@ -45,14 +45,11 @@ class PackagePage extends Page {
         await this.packageSubmitBtn.click();
     }
 
-    // between(min, max) {
-    //     return Math.floor(
-    //         Math.random() * (max - min) + min
-    //     )
-    // }
 
     async deletePackage(randomData) {
-        this.packageAdded=`randomData.name randomData.length x randomData.width x randomData.height`
+        this.packageAdded='Barrett.OHara91 2 x 16 x 11'
+        // this.packageAdded=`randomData.name randomData.length x randomData.width x randomData.height`
+       
         await this.packageAdded.click();
         await this.packageDelButton.waitForExist({ timeout: 5000 });
         await this.packageDelButton.click();

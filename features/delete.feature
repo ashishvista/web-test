@@ -17,7 +17,7 @@ Feature: The Internet Guinea Pig Website
 
   Scenario: As a user, i want to delete package
     
-    When I click delete package icon on top menu
+    When I click delete package which i added previously
   
   Scenario: As a user, i want to logout
     

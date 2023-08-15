@@ -49,6 +49,6 @@ Then(/^i logout$/, async () => {
 
 
 
-When(/^I click delete package icon on top menu$/, () => {
-	return true;
+When(/^I click delete package which i added previously$/, () => {
+	return PackagePage.deletePackage(randomData);
 });
