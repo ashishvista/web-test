@@ -36,23 +36,36 @@ class PackagePage extends Page {
         this._packageAdded=$(`//div[normalize-space()='${packagename}']`);
     }
 
+    get packageDeleteConfirmationBtn(){
+        return $('#mat-dialog-0 > app-alert-dialog > mat-card > div > button > span.mat-button-wrapper')
+    }
     async addPackage(randomData) {
         await this.inputName.waitForExist({ timeout: 5000 });
         await this.inputName.setValue(randomData.name);
         await this.inputLength.setValue(randomData.length);
         await this.inputWidth.setValue(randomData.width);
         await this.inputHeight.setValue(randomData.height);
+        browser.pause(5000)
+        var packageName=`${randomData.name} ${randomData.length} x ${randomData.width} x ${randomData.height}`
+        await browser.sharedStore.set('packageName', packageName)
+        console.log("Before adding----",packageName)
         await this.packageSubmitBtn.click();
     }
 
 
     async deletePackage(randomData) {
-        this.packageAdded='Barrett.OHara91 2 x 16 x 11'
-        // this.packageAdded=`randomData.name randomData.length x randomData.width x randomData.height`
-       
+        // this.packageAdded='Omer.Jones10 4 x 15 x 18';
+        // var str='Omer.Jones10 4 x 15 x 18';
+        var packageName=`${randomData.name} ${randomData.length} x ${randomData.width} x ${randomData.height}`
+        console.log("Before deleting----",packageName)
+        const value = await browser.sharedStore.get('packageName')
+        this.packageAdded=value
+       browser.pause(5000)
         await this.packageAdded.click();
         await this.packageDelButton.waitForExist({ timeout: 5000 });
         await this.packageDelButton.click();
+        await this.packageDeleteConfirmationBtn.waitForExist({ timeout: 5000 });
+        await this.packageDeleteConfirmationBtn.click();
     }
 
     open() {
