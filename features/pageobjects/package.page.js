@@ -25,6 +25,16 @@ class PackagePage extends Page {
     return $('//mat-icon[normalize-space()="check"]')
 
     }
+    get packageDelButton(){
+        return $('//mat-icon[normalize-space()="delete"]')
+    }
+    get packageAdded(){
+        // return $("//div[normalize-space()='test']");
+        return this.packageAdded
+    }
+    set packageAdded(packagename){
+        return $(`//div[normalize-space()='${packagename}']`);
+    }
 
     async addPackage(randomData) {
         await this.inputName.waitForExist({ timeout: 5000 });
@@ -35,10 +45,17 @@ class PackagePage extends Page {
         await this.packageSubmitBtn.click();
     }
 
-    between(min, max) {
-        return Math.floor(
-            Math.random() * (max - min) + min
-        )
+    // between(min, max) {
+    //     return Math.floor(
+    //         Math.random() * (max - min) + min
+    //     )
+    // }
+
+    async deletePackage(randomData) {
+        this.packageAdded=`randomData.name randomData.length x randomData.width x randomData.height`
+        await this.packageAdded.click();
+        await this.packageDelButton.waitForExist({ timeout: 5000 });
+        await this.packageDelButton.click();
     }
 
     open() {
